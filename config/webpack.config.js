@@ -14,26 +14,27 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/,
-                loader: "babel-loader",
-                query: {
-                    exclude: /node_modules/,
-                    sourceMaps: true,
-                    presets: [
-                        [
-                            "@babel/preset-env",
-                            {
-                                useBuiltIns: "usage",
-                                corejs: 3
-                            },
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            [
+                                "@babel/preset-env",
+                                {
+                                    useBuiltIns: "usage",
+                                    corejs: 3
+                                },
+                            ],
+                            "@babel/preset-react"
                         ],
-                        "@babel/preset-react"
-                    ],
-                    plugins: [
-                        "@babel/plugin-proposal-class-properties"
-                    ]
-                }
+                        plugins: [
+                            "@babel/plugin-proposal-class-properties"
+                        ]
 
-            }
+                    }
+                }
+            },
         ]
     },
     plugins: [
@@ -43,5 +44,8 @@ module.exports = {
             filename: "index.html",
             inject: true
         })
-    ]
+    ],
+    devServer: {
+        open: true
+    }
 }
