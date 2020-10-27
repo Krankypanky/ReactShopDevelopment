@@ -3,7 +3,7 @@ var path = require("path");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "../dist"),
@@ -31,7 +31,6 @@ module.exports = {
                         plugins: [
                             "@babel/plugin-proposal-class-properties"
                         ]
-
                     }
                 }
             },
