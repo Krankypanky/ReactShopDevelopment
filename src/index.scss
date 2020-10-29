@@ -1,5 +1,12 @@
-$color:red;
 
-h1 {
-    color: $color
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
